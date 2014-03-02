@@ -39,8 +39,8 @@ directives.directive('factorizer', function () {
         template:   '<div>' +
                         '<h3> Factorizer Directive </h3>' +
                         '<input type="number" ng-model="userInput" ng-change="update()" placeholder="number to factor..." />' +
-                        '<span ng-repeat="factor in factors" style="display: block; background-color: orange; margin: 3px; text-align: center">' +
-                            '{{factor}}</span>' +
+                        '<div ng-repeat="factor in factors" class="circle" style="x:{{index*10}}">' +
+                            '{{factor}}</div>' +
                     '</div>'
     };
 
