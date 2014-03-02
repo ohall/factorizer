@@ -4,7 +4,7 @@
 
 "use strict";
 
-var directives = angular.module('directives', []);
+var directives = angular.module('directives', ['ngRoute','ngAnimate']);
 
 function primeFactorization(num){
     var root = Math.sqrt(num),
@@ -15,6 +15,7 @@ function primeFactorization(num){
         x = 3;//assign first odd
         while ((num % x) && ((x = x + 2) < root)) {}//iterate odds
     }
+
     //if no factor found then num is prime
     x = (x <= root) ? x : num;
     result.push(x);//push latest prime factor
@@ -27,6 +28,14 @@ function FactorizerCtrl($scope){
     $scope.update = function(){
         $scope.factors = primeFactorization($scope.userInput);
     };
+
+    $scope.xlocation = function(index){
+       if(index===0){
+           return 0;
+       } else {
+           return index * ( (index % 2 === 0) ? 50 : -50);
+       }
+    };
 }
 
 directives.directive('factorizer', function () {
@@ -36,14 +45,10 @@ directives.directive('factorizer', function () {
             userInput   : '=userInput'
         },
         controller: FactorizerCtrl,
-        template:   '<div>' +
-                        '<h3> Factorizer Directive </h3>' +
-                        '<input type="number" ng-model="userInput" ng-change="update()" placeholder="number to factor..." />' +
-                        '<div ng-repeat="factor in factors" class="circle" style="x:{{index*10}}">' +
-                            '{{factor}}</div>' +
-                    '</div>'
+        templateUrl:'/factorizer/app/views/factorizerTeplate.html'
     };
 
 });
+
 
 

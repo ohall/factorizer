@@ -1,0 +1,7 @@
+<div style="text-align: center">
+    <h3> Factorizer Directive </h3> 
+    <input type="number" ng-model="userInput" ng-change="update()" placeholder="number to factor..." /> 
+    <div data-ng-repeat="factor in factors track by $index" class="circle my-repeat-animation"
+         style="margin-left:{{xlocation($index)}}px" id="{{xlocation($index)}}">
+    {{factor}}</div> 
+</div>
