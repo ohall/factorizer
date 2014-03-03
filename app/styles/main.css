@@ -22,9 +22,34 @@ body {
     letter-spacing: -1px;
 }
 
+.main-view{
+    margin: 10px;
+    width: 100%;
+    height: 800px;
+    border: solid;
+    border-width: 0;
+    border-radius: 32px;
+    padding: 20px;
+}
 
-.factor-ball {
+.factorizer{
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    width: 250px;
+}
 
+.number-input{
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 50px;
+    color: #000000;
+}
+
+.ball-start{
+    width: 100px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .circle {
